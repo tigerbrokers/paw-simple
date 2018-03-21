@@ -1,0 +1,11 @@
+{
+  "name": "@tigerbrokers/paw-simple",
+  "version": "1.0.0",
+  "description": "",
+  "main": "plopfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Li Yi<i@ijser.cn>",
+  "license": "ISC"
+}
