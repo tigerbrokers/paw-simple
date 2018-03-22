@@ -13,27 +13,16 @@ module.exports = plop => {
             type: 'input',
             name: 'desc',
             message: '项目描述'
-        }, {
-            type: 'input',
-            name: 'dist',
-            default: 'dist/',
-            message: '构建结果目录'
         }],
         actions: data => {
-            const workdir = path.join(cwd, data.name.toLowerCase())
-            const d = file => path.join(workdir, file || '/')
-
-            // Ensure path end with slash to upload files propertly
-            data.dist = data.dist.replace(/\/?$/, '/')
-
+            const workdir = path.join(cwd, data.name)
             const actions = [{
                 type: 'addMany',
-                destination: d(),
+                destination: workdir,
                 templateFiles: [
                     'templates/**/*',
                     'templates/**/.*',
-                ],
-                globOptions: {}
+                ]
             }]
 
             return actions
